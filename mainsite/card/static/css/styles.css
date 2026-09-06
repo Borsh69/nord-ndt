@@ -34,3 +34,31 @@
 .service-facts{margin:30px 0 0;padding:26px 0 0;border-top:1px solid #d5deec;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}.service-facts>div{min-width:0}.service-facts dt{font-size:15px;font-weight:600;margin-bottom:9px}.service-facts dd{font-size:15px;color:var(--muted);margin:0;overflow-wrap:anywhere}.detail-bottom{justify-content:flex-end}
 .contact-phones{display:flex;flex-direction:column;gap:4px;font-size:20px}.contact-phones a:hover{color:#bcd2ff}.contact-address{font-size:14px;color:#c4d3ec;font-style:normal;line-height:1.7}.contact-address span{display:block;color:#adbbd2}.contact-links{gap:17px}.footer-main{align-items:flex-start}
 @media(max-width:800px){.service-facts{grid-template-columns:1fr}.contact-phones{font-size:19px}}
+.header .brand {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 8px;
+
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: clamp(26px, 2.5vw, 32px);
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.8px;
+  white-space: nowrap;
+}
+
+.header .brand span {
+  display: inline;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+  letter-spacing: inherit;
+  color: var(--blue, #284d9c);
+}
+.service-icon img {
+  display: block;
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+}

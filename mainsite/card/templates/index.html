@@ -1,4 +1,4 @@
-{% load static%}
+{% load static %}
 <!doctype html>
 <html lang="ru">
 
@@ -6,7 +6,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>NOR NDT — техническая документация</title>
+    <title>NORD NDT — техническая документация</title>
 
     <meta name="description" content="Разработка технических паспортов, технических условий, руководств по эксплуатации и другой документации для продукции и оборудования.">
 
@@ -21,8 +21,8 @@
     <header class="header">
         <div class="container header-inner">
 
-            <a class="brand" href="index.html" aria-label="NOR NDT — главная">
-                NOR<span>NDT</span>
+            <a class="brand" href="{% url 'main' %}" aria-label="NOR NDT — главная">
+                NORD<span>NDT</span>
             </a>
 
             <span class="brand-note">
@@ -145,23 +145,28 @@
 
 
                 <div class="service-grid">
-
+                    {% for card in objects %}
                     <!-- Начало цикла: повторяйте только .service-card внутри общей .service-grid. -->
 
-                    <a class="service-card" href="service.html#services">
+                    <a class="service-card" href="{% url 'service' card.id %}">
 
                         <span class="service-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
-                                <path d="M14 3H5v18h14V8zM14 3v5h5M8 12h8M8 16h6"/>
-                            </svg>
+                            {% if card.photo %}
+                                <img
+                                src="{{ card.photo.url }}"
+                                alt=""
+                                width="24"
+                                height="24"
+                                >
+                            {% endif %}
                         </span>
-
-                        <h3>Технические паспорта</h3>
+                        
+                        <h3>{{ card.title }}</h3>
 
                         <span class="card-arrow" aria-hidden="true">↗</span>
 
                     </a>
-
+                    {% endfor %}
                     <!-- Конец цикла. Внешняя сетка остается одна. -->
 
                 </div>
